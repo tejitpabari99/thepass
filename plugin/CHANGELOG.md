@@ -2,6 +2,9 @@
 
 Newest first. Each release: add a `## <version> (<date>)` section, bump `plugin/.claude-plugin/plugin.json` and `plugin/gemini-extension.json`, and bump `metadata.version` in each changed skill. Patch: wording and fixes. Minor: new or changed behavior, new skill. Major: breaking change.
 
+## 0.5.0 (2026-11-27)
+- `start`: the organization or team name is now optional. If skipped, declined or given as an email, a random anonymous `org_` id is used and setup never blocks. Saved like a typed name. `PRIVACY.md` updated.
+
 ## 0.4.0 (2026-11-27)
 - `start`: starring the repo is now an optional suggestion with the link; the plugin no longer stars for the person.
 - `start`: new identity step (`references/identity.md`) asks for an organization or team name once and sends one anonymous `setup_done` count (`references/usage-ping.md`). Details in `PRIVACY.md` and `TERMS.md`.
