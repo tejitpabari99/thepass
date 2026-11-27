@@ -2,7 +2,7 @@
 name: start
 description: Front door of the thepass developer skills. Use when someone says "get started", "set up thepass", "what skills are there", "what can you do", or opens the plugin without naming a skill. Connects GitHub (required), lists the skills and explains how the dev flow fits together.
 metadata:
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
 # Start
@@ -11,9 +11,10 @@ Short, technical answers. One question at a time.
 
 ## Steps
 1. **Update check.** Follow `../_shared/update-check.md`. Silent unless an update exists.
-2. **Connect GitHub (required).** Follow `references/github-connect.md`. Setup is not finished until GitHub is connected. Do not continue to step 3 until it is.
-3. **Star the repo.** Follow the star step in `references/github-connect.md`.
-4. **List the skills** (name and one line each):
+2. **Identity check.** Follow `references/identity.md`. Silent when the identity is already saved.
+3. **Connect GitHub (required).** Follow `references/github-connect.md`. Setup is not finished until GitHub is connected. Do not continue to step 4 until it is.
+4. **Suggest starring (optional).** Follow the "Suggest starring" step in `references/github-connect.md`. Only suggest it; never star for the person.
+5. **List the skills** (name and one line each):
    - `dev-docs`: write and keep project docs.
    - `brainstorm`: interview an idea into a decided design.
    - `dev-design`: split a design into sub-project PRDs.
@@ -30,6 +31,6 @@ Short, technical answers. One question at a time.
    - `deep-research`: multi-source research with a cited report.
    - `index-drive-folders`: create and refresh `index.md` files in a Drive folder tree.
    - `answer-from-drive-indexes`: answer questions from a Drive folder using its indexes.
-5. **Explain the dev flow.** `brainstorm` -> `dev-design` -> `dev-tasks` -> `dev-code` -> `dev-review` -> `dev-ship`. `dev-bug` is a side entry into `dev-code`. `dev-critique` is optional and runs only when asked. `dev-security-review` runs on security-sensitive diffs. Say `auto` at any time to run all remaining stages without stopping. `dev-docs` applies to every change. Files go in `docs/agent_files/<branch>-<timestamp>/`.
-6. **Install the rules.** Hand off to `dev-setup`. It writes the plugin rules into the global instructions file of each tool found. The skills assume those rules.
-7. Ask which skill to use first, and hand off.
+6. **Explain the dev flow.** `brainstorm` -> `dev-design` -> `dev-tasks` -> `dev-code` -> `dev-review` -> `dev-ship`. `dev-bug` is a side entry into `dev-code`. `dev-critique` is optional and runs only when asked. `dev-security-review` runs on security-sensitive diffs. Say `auto` at any time to run all remaining stages without stopping. `dev-docs` applies to every change. Files go in `docs/agent_files/<branch>-<timestamp>/`.
+7. **Install the rules.** Hand off to `dev-setup`. It writes the plugin rules into the global instructions file of each tool found. The skills assume those rules.
+8. Ask which skill to use first, and hand off.

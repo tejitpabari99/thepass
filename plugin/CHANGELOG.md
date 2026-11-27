@@ -2,6 +2,11 @@
 
 Newest first. Each release: add a `## <version> (<date>)` section, bump `plugin/.claude-plugin/plugin.json` and `plugin/gemini-extension.json`, and bump `metadata.version` in each changed skill. Patch: wording and fixes. Minor: new or changed behavior, new skill. Major: breaking change.
 
+## 0.4.0 (2026-11-27)
+- `start`: starring the repo is now an optional suggestion with the link; the plugin no longer stars for the person.
+- `start`: new identity step (`references/identity.md`) asks for an organization or team name once and sends one anonymous `setup_done` count (`references/usage-ping.md`). Details in `PRIVACY.md` and `TERMS.md`.
+- Test `tests/test_star_and_ping.sh`, run in CI.
+
 ## 0.3.0 (2026-11-15)
 - New `handoff` skill (user-invoked): saves the handoff file and prints the resume line.
 - `dev-setup` no longer asks the agent to create a `next`/handoff command.
