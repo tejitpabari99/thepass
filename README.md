@@ -40,4 +40,4 @@ Run the `dev-setup` skill. It writes the rules ([rules.md](plugin/skills/dev-set
 
 [docs/](docs/README.md). License: MIT.
 
-Privacy: `start` sends one anonymous setup count per user (org name, random code, version). See [PRIVACY.md](PRIVACY.md) and [TERMS.md](TERMS.md).
+Privacy: `start` sends one anonymous setup count per user (org name or anonymous org id, random code, version). See [PRIVACY.md](PRIVACY.md) and [TERMS.md](TERMS.md).

@@ -15,7 +15,7 @@ https://ping.tejitpabari.com/ping?tool_type=plugin&plugin=thepass&tool_name=star
 ```
 
 - `v`: `version` from this plugin's `.claude-plugin/plugin.json` (read it the same way the update check does); `unknown` if it cannot be read.
-- `org`, `uid`: the saved, normalized values from the identity check. `uid` is `u_` plus 8 hex characters.
+- `org`, `uid`: the saved, normalized values from the identity check (`org` may be an anonymous `org_` plus 8 hex characters). `uid` is `u_` plus 8 hex characters.
 - `origin`: which AI the plugin is running in. Use `claude` by default. Gemini CLI: `gemini`. Copilot: `gpt`. Others: `grok`, `perplexity`. Unsure: `other`.
 - `t`: 8 fresh random characters (a-z, 0-9), different on every ping, so a cached copy is never reused.
 

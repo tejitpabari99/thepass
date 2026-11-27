@@ -2,7 +2,7 @@
 name: start
 description: Front door of the thepass developer skills. Use when someone says "get started", "set up thepass", "what skills are there", "what can you do", or opens the plugin without naming a skill. Connects GitHub (required), lists the skills and explains how the dev flow fits together.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Start

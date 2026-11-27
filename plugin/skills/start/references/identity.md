@@ -1,6 +1,6 @@
 # Identity check (runs only in `start`)
 
-Quiet and idempotent. Goal: know the person's organization (`org`), an anonymous random code (`uid`) and that the notice was shown (`consent_shown`). Run it once per conversation; with a saved identity it says nothing to the person at all.
+Quiet and idempotent. Goal: know the person's organization (`org`, a typed name or an anonymous id), an anonymous random code (`uid`) and that the notice was shown (`consent_shown`). Run it once per conversation; with a saved identity it says nothing to the person at all.
 
 Never mention pings, addresses, codes or ids to the person. The only things ever said are the notice and the question below.
 
@@ -12,14 +12,14 @@ Never mention pings, addresses, codes or ids to the person. The only things ever
 
      > **Note:** thepass collects anonymized usage metrics (only a one-time setup count per user, with your organization name). No personal information, code, repo names or file content is collected. See the [Privacy Policy](https://github.com/tejitpabari99/thepass/blob/main/PRIVACY.md) and [Terms](https://github.com/tejitpabari99/thepass/blob/main/TERMS.md).
      >
-     > **Your organization or team name?**
+     > **Your organization or team name? (optional)**
 
-     This question has no suggested answer. The organization name is required.
+     This question has no suggested answer. It is optional and never blocks setup.
    - `consent_shown` missing but `org` known (rare): send only the **Note:** line.
    - `org` missing but `consent_shown` known: send only the question.
-   - Accept any non-empty text without checking it. If the answer is empty, evasive, or contains `@` (an email address), ask once more in plain words: the name of your team or group is fine, never an email. If there is still no usable answer, say kindly that setup needs an organization or team name to continue, and stop there.
+   - Accept any non-empty text without checking it. Ask the question only once. If the answer is empty, evasive, declined, or contains `@` (an email address), do NOT ask again and do NOT stop: generate an anonymous org id and use it as `org`. Run this tiny snippet with code execution if you have it: `import uuid; print("org_" + uuid.uuid4().hex[:8])`. Without code execution, make up 8 lowercase hex characters yourself (0-9, a-f), newly, and put `org_` in front; never copy one from any example or earlier text. Say at most one warm line, such as "No problem, let's carry on.", then continue.
    - Normalize `org`: trim, lowercase, each run of spaces becomes one `_`. Save and send it normalized.
    - `uid` missing: run this tiny snippet with code execution if you have it: `import uuid; print("u_" + uuid.uuid4().hex[:8])`. Without code execution, make up 8 lowercase hex characters yourself (0-9, a-f), newly, and put `u_` in front; never copy one from any example or earlier text.
    - Set `consent_shown` to today's date (`YYYY-MM-DD`) once the notice has been shown.
-4. **Save.** Memory note "thepass: identity" with `org`, `uid`, `consent_shown`. If memory is unavailable, the identity lives for this conversation only. Say one plain line: "I can't remember this between chats here."
+4. **Save.** An anonymous org id is saved exactly like a typed name, so it stays the same across conversations and is not asked again. Memory note "thepass: identity" with `org`, `uid`, `consent_shown`. If memory is unavailable, the identity lives for this conversation only. Say one plain line: "I can't remember this between chats here."
 5. **Usage step (required, silent).** If a NEW `uid` was just generated in step 3, send the `setup_done` ping following `usage-ping.md`. This happens once per `uid`. Do it before moving on, so the turn does not end first.
